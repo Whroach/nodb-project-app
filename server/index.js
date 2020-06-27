@@ -4,7 +4,8 @@
  Finally, we need to add app.listen in order to instruct which port we want it to run on and give it a console.log knowing that it works*/
 
 const express = require('express');
-const ctrl = require('./controller')
+const ctrl = require('./controllers/playerCtrl')
+const ctrl2 = require('./controllers/rosterCtrl')
 
 const app = express();
 
@@ -16,8 +17,8 @@ GPPT = the Method, the Path = ex: '/api/users', handler function = method name i
 Example: app.get('/api/users', handlerFunc)*/
 
 app.get('/api/players', ctrl.getPlayerData)
-// app.get();
-// app.put();
+app.get('/api/draft-player', ctrl2.getSelectedPlayer);
+app.put('/api/draft-player', ctrl2.draftPlayer);
 // app.post();
 // app.delete();
 

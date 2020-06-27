@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import './App.css';
-import Profiles from './components/Profiles'
+import Players from './components/Players'
 import axios from 'axios'
+import Roster from './components/Roster'
+import DisplayRoster from './components/DisplayRoster';
 
 
 class App extends Component {
@@ -10,33 +12,42 @@ class App extends Component {
 
 
     this.state = {
-      playerProfiles: []
+      fantasyTeam: []
     }
   };
 
   componentDidMount = () => {
-    this.getPlayers();
-  }
+    this.draftPlayer()
 
-  getPlayers = () => {
-    axios.get('/api/players')
-    .then(res =>{
-      this.setState({playerProfiles: res.data})
+  };
+
+  draftPlayer = () => {
+    axios.post('/api/draft-player', {nbaPlayers: nbaPlayers})
+    .then(response => {
+      this.setState({fantasyTeam: response.data})
     })
     .catch(error => console.log(error));
+
   }
-
-
-
-
 
 
 
 
 
   render(){
+
     return(
-      <div><Profiles/></div>
+      <div>
+        <Players/>
+
+        <Roster
+        fantasyDisplay={this.state.fantasyTeam}
+        />
+        <DisplayRoster/>
+
+
+
+        </div>
     )
   }
 }
