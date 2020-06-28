@@ -3,7 +3,7 @@ import './App.css';
 import Players from './components/Players'
 import axios from 'axios'
 import Roster from './components/Roster'
-import DisplayRoster from './components/DisplayRoster';
+import Header from './components/Header'
 
 
 class App extends Component {
@@ -38,16 +38,19 @@ class App extends Component {
 
 
     return(
-      <div>
-         <Roster
-        fantasyDisplay={this.state.fantasyTeam}
-        />
+      <div className="background-image">
+        <Header/>
+          <Roster
+            fantasyDisplay={this.state.fantasyTeam}
+          />
+          <div className="scroll-bar">
+            <Players
+              draftPlayer ={this.draftPlayer}
+            />
+          </div>
+      </div>
 
-        <Players
-        draftPlayer ={this.draftPlayer}
-        />
 
-        </div>
     )
   }
 }

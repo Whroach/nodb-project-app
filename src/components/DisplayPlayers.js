@@ -3,11 +3,13 @@ import React, { Component } from 'react'
 export default class DisplayPlayers extends Component {
 
     draftPick = () => {
-        const { value } = this.props
+
+        // const { value } = this.props
 
         let draftSelection = {
-            picture: value.image,
-            name: value.name
+            name: this.props.value.name,
+            team: this.props.value.team,
+            position: this.props.value.position
         }
         console.log(draftSelection)
 
@@ -17,14 +19,23 @@ export default class DisplayPlayers extends Component {
 
 
     render() {
-        const { value } = this.props
 
         return (
-            <div className = "view-players" onClick={this.draftPick}>
-                <img src={value.image}/>
-                <p>{value.name}</p>
-            
+            <div>
+                <dl>
+                    <div className = "view-players">
+                        <img src={this.props.value.image} alt={this.props.value.name} id="playerImage"/>
+                        <div className ="player-description">
+                            <p id ="playerName">{this.props.value.name}</p>
+                            <p className ="teamName">{this.props.value.team}</p>
+                            <p className = "teamName">{this.props.value.position}</p>
+                        </div>
+                        <button id = "draft-button" onClick={this.draftPick}>Draft</button>
+                    </div>
+                </dl>
+
             </div>
         )
     }
-}
+};
+

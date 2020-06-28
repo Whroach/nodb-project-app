@@ -111,7 +111,7 @@ let players = [
     },
     {
         id: 15,
-        image: 'https://media.video-cdn.espn.com/motion/2019/1105/dm_191105_NBA_Hawks_Ice_Trae_sot/dm_191105_NBA_Hawks_Ice_Trae_sot.jpg',
+        image: 'https://a.espncdn.com/combiner/i?img=/i/headshots/recruiting/ncb/players/full/203210.png&w=350&h=254',
         name: 'Trae Young',
         team: 'ATL',
         position: 'Guard',
@@ -127,7 +127,7 @@ let players = [
     },
     {
         id: 17,
-        image: 'https://a3.espncdn.com/combiner/i?img=%2Fphoto%2F2019%2F1022%2Fr616524_1296x729_16%2D9.jpg',
+        image: 'https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3149673.png',
         name: 'Pascal Siakam',
         team: 'TOR',
         position: 'Forward',
@@ -151,7 +151,7 @@ let players = [
     },
     {
         id: 20,
-        image: 'https://a1.espncdn.com/combiner/i?img=%2Fphoto%2F2017%2F0118%2Fr172329_1296x729_16%2D9.jpg',
+        image: 'https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3907387.png',
         name: 'Ben Simmons',
         team: 'PHI',
         position: 'Guard',
@@ -212,7 +212,7 @@ module.exports = {
 
     draftPlayer: (req,res) => {
 
-       const playersArr = players.slice(0)
+       const  { playersArr } = req.body
 
         playersArr.id = id
         id++;

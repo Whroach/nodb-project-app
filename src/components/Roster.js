@@ -1,19 +1,29 @@
-import React, { Component } from 'react'
+import React from 'react'
 import DisplayRoster from './DisplayRoster'
 
 
 export default function Roster (props) {
 
-        const { fantasyDisplay } = props
+        // const { fantasyDisplay } = props
     
-        const fantasyProfile = fantasyDisplay.map((element, index) => {
-            return <DisplayRoster value = {element} key ={index} />
-          });
+        const fantasyProfile = props.fantasyDisplay.map((element, index) => (
+            <DisplayRoster value = {element} key ={index}/>
+        ));
           
             return (
                 <div>
-                    <h1>Fantasy Team</h1>
+                    <div className="fantasy-roster">
+
+                        <section className="front-court">
+
+
+                        </section>
+                        <section className="back-court">
+
+                        </section>
                     {fantasyProfile}
+
+                    </div>
                 </div>
             )
         

@@ -40,7 +40,7 @@ export default class Players extends Component {
         });
 
         return (
-            <div>
+            <div className="main-players-display">
                 {allPlayers}
                 
             </div>

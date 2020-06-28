@@ -1,8 +1,83 @@
+.draft-logo {
+  background-image: url("https://www.zagsblog.com/wp-content/uploads/2020/05/image-1.jpeg");
+  background-repeat: no-repeat;
+  height: 80px;
+  width: 100%
 
+}
+
+
+
+
+.background-image {
+  background-image: url("https://specials-images.forbesimg.com/imageserve/5d8a7cc318444200084e6aa7/960x0.jpg?fit=scale");
+  background-repeat: no-repeat;
+  background-size: 100vh;
+  background-size: 100vw;
+  background-position-y: -100px;
+
+
+}
+
+.scroll-bar{
+  overflow: scroll;
+  height: 100vh;
+  /* margin: 5%; */
+  /* display: none; */
+}
+
+.main-players-display {
+  display: grid;
+  justify-content: center;
+  /* grid-template-columns: repeat(4,1fr);
+  grid-auto-rows: 100px; */
+  grid-template-columns: 200px 200px 200px 200px 200px 200px;
+
+}
 
 .view-players {
-  position: relative;
-  display: inline;
-  justify-content: space-around;
+   position: relative; 
+   background-color: white; 
+   height: 27vh;
+   width: 75%;
+   background-image: url("https://theknockturnal.com/wp-content/uploads/2017/05/NBA-Logo-Wallpaper-0-1170x658.jpg");
+   background-size: 100vh;
+   background-size: 100vw;
+   background-size: contain;
+   background-repeat: no-repeat;
+}
 
+#playerImage {
+  height: 10vh;
+
+}
+
+
+.player-description { 
+  display: inline-block;
+
+}
+
+#playerName {
+  font-weight: bold;
+  font-size: 18px;
+  /* margin-bottom: 20%; */
+}
+
+.teamName {
+  margin-top: -10%;
+}
+
+#draft-button {
+  background: lightgreen;
+  display: flex;
+  justify-content: center;
+  height: 25.9px;
+  width: 100%
+
+}
+
+.fantasy-roster{
+  display:flex;
+  justify-content: center;
 }
