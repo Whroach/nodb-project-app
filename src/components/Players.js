@@ -21,7 +21,7 @@ export default class Players extends Component {
         this.getPlayers();
       }
     
-      getPlayers = () => {
+    getPlayers = () => {
         axios.get('/api/players')
         .then(res =>{
           this.setState({playerlist: res.data})

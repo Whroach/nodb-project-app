@@ -199,14 +199,27 @@ let players = [
     },  
 
 ];
+let newArray = []
 
 let id = 1;
+
 
 module.exports = {
 
     getPlayerData: (req,res) => {
         res.status(200).send(players)
-    }
+    },
+
+    draftPlayer: (req,res) => {
+
+       const playersArr = players.slice(0)
+
+        playersArr.id = id
+        id++;
+        newArray.push(playersArr)
+        res.status(200).send(newArray)
+    },
+
 };
 
 

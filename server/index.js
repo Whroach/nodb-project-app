@@ -16,11 +16,8 @@ GPPT = the Method, the Path = ex: '/api/users', handler function = method name i
 Example: app.get('/api/users', handlerFunc)*/
 
 app.get('/api/players', ctrl.getPlayerData)
-
-
-// app.get('/api/draft-player', ctrl2.getSelectedPlayer);
-// app.post('/api/draft-player', ctrl2.draftPlayer);
-// app.post();
+app.post('/api/players', ctrl.draftPlayer);
+// app.put();
 // app.delete();
 
 

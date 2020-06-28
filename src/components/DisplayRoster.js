@@ -10,12 +10,14 @@ export default class DisplayRoster extends Component {
     };
 
     render() {
-
-        // console.log(this.props.fantasyProfile)
+        
+        const { value } = this.props
         
         return (
             <div>
-                
+                <h1>A Team</h1>
+                <img src={value.image}/>
+                <p>{value.name}</p>
             </div>
         )
     }

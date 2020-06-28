@@ -2,25 +2,25 @@ import React, { Component } from 'react'
 
 export default class DisplayPlayers extends Component {
 
-    // draftPick = () => {
-    //     const { player } = this.props;
+    draftPick = () => {
+        const { value } = this.props
 
-    //     let draftSelection = {
-    //         name: player.data.first_name,
-    //         team: player.data.last_name
-    //     }
+        let draftSelection = {
+            picture: value.image,
+            name: value.name
+        }
+        console.log(draftSelection)
 
-    //     this.props.draftPlayer(draftSelection)
-    // }
+        this.props.draftPlayer(draftSelection)
+    }
 
 
 
     render() {
         const { value } = this.props
 
-
         return (
-            <div className = "view-players">
+            <div className = "view-players" onClick={this.draftPick}>
                 <img src={value.image}/>
                 <p>{value.name}</p>
             
