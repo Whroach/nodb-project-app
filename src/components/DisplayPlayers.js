@@ -2,6 +2,17 @@ import React, { Component } from 'react'
 
 export default class DisplayPlayers extends Component {
 
+    // draftPick = () => {
+    //     const { player } = this.props;
+
+    //     let draftSelection = {
+    //         name: player.data.first_name,
+    //         team: player.data.last_name
+    //     }
+
+    //     this.props.draftPlayer(draftSelection)
+    // }
+
 
 
     render() {
@@ -10,9 +21,9 @@ export default class DisplayPlayers extends Component {
 
         return (
             <div className = "view-players">
-                <p>{`${value.first_name} ${value.last_name}`}</p>
-                <p>{`Team: ${value.team.full_name}`}</p>
-                <p>{`Position: ${value.position}`}</p>
+                <img src={value.image}/>
+                <p>{value.name}</p>
+            
             </div>
         )
     }

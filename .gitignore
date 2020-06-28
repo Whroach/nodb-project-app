@@ -22,3 +22,110 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+
+#API requires additional steps to retrieve data that we have not covered yet.
+
+// const ctrl2 = require('./controllers/rosterCtrl')
+
+
+       playerProfileArray = [];
+
+        axios.get('https://www.balldontlie.io/api/v1/players/237')
+        .then(response => {
+            playerProfileArray.push(response.data);
+            axios.get('https://www.balldontlie.io/api/v1/players/192')
+            .then(response => {
+                playerProfileArray.push(response.data);
+                axios.get('https://www.balldontlie.io/api/v1/players/472')
+                .then(response => {
+                    playerProfileArray.push(response.data);
+                    axios.get('https://www.balldontlie.io/api/v1/players/278')
+                    .then(response => {
+                        playerProfileArray.push(response.data);
+                        axios.get('https://www.balldontlie.io/api/v1/players/15')
+                        .then(response => {
+                            playerProfileArray.push(response.data);
+                            axios.get('https://www.balldontlie.io/api/v1/players/246')
+                            .then(response => {
+                                playerProfileArray.push(response.data);
+                                axios.get('https://www.balldontlie.io/api/v1/players/274')
+                                .then(response => {
+                                    playerProfileArray.push(response.data);
+                                    axios.get('https://www.balldontlie.io/api/v1/players/79')
+                                    .then(response => {
+                                        playerProfileArray.push(response.data);
+                                        axios.get('https://www.balldontlie.io/api/v1/players/140')
+                                        .then(response => {
+                                            playerProfileArray.push(response.data);
+                                            axios.get('https://www.balldontlie.io/api/v1/players/145')
+                                            .then(response => {
+                                                playerProfileArray.push(response.data);
+                                                res.status(200).send(playerProfileArray)
+                                            })
+                                        })
+                                    })
+                                })
+                            })
+                        })
+                    })
+                })
+            })
+        })      
+        .catch(error => res.status(500).send(error));
+    }
+};
+
+
+
+    // getPlayerData: (req,res) => {
+    //     playerProfile = [];
+
+    //     axios.get('https://www.balldontlie.io/api/v1/players/237')
+    //     .then(response => {
+    //         playerProfile.push(response.data)
+    //         res.status(200).send(playerProfile)
+    //     })
+    //     .catch(error => res.status(500).send(error));
+
+    // },
+
+
+let rosterArray = [];
+
+let id = 1
+
+module.exports = {
+
+    getSelectedPlayer: (req,res) => {
+        res.status(200).send(rosterArray)
+    },
+
+    /*Assign a unique id to each player that's
+    added and then push it to the rosterArray. 
+    variable id will increment so we can
+    keep id's unique. */
+
+    draftPlayer: (req,res) => {
+        const { players } = req.body
+        
+        players.data.id = id
+
+        id++;
+
+        rosterArray.push(players);
+        res.status(200).send(rosterArray)
+    },
+
+
+
+
+
+
+    // .put()
+
+    // .delete()
+
+
+};

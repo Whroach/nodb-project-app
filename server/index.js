@@ -5,7 +5,6 @@
 
 const express = require('express');
 const ctrl = require('./controllers/playerCtrl')
-const ctrl2 = require('./controllers/rosterCtrl')
 
 const app = express();
 
@@ -17,8 +16,10 @@ GPPT = the Method, the Path = ex: '/api/users', handler function = method name i
 Example: app.get('/api/users', handlerFunc)*/
 
 app.get('/api/players', ctrl.getPlayerData)
-app.get('/api/draft-player', ctrl2.getSelectedPlayer);
-app.put('/api/draft-player', ctrl2.draftPlayer);
+
+
+// app.get('/api/draft-player', ctrl2.getSelectedPlayer);
+// app.post('/api/draft-player', ctrl2.draftPlayer);
 // app.post();
 // app.delete();
 

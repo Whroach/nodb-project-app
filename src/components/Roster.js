@@ -3,15 +3,15 @@ import DisplayRoster from './DisplayRoster'
 
 export default class Roster extends Component {
     render() { 
-    const { fantasyDisplay } = this.props
+    // const { fantasyDisplay } = this.props
 
-    const fantasyProfile = fantasyDisplay.map((element, index) => {
-        return <DisplayRoster value = {element} key ={index} />
-      });
+    // const fantasyProfile = fantasyDisplay.map((element, index) => {
+    //     return <DisplayRoster value = {element} key ={index} />
+    //   });
       
         return (
             <div>
-                {fantasyProfile}
+                {/* {fantasyProfile} */}
             </div>
         )
     }

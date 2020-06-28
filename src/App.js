@@ -16,19 +16,19 @@ class App extends Component {
     }
   };
 
-  componentDidMount = () => {
-    this.draftPlayer()
+  // componentDidMount = () => {
+  //   this.draftPlayer()
 
-  };
+  // };
 
-  draftPlayer = () => {
-    axios.post('/api/draft-player', {nbaPlayers: nbaPlayers})
-    .then(response => {
-      this.setState({fantasyTeam: response.data})
-    })
-    .catch(error => console.log(error));
+  // draftPlayer = (players) => {
+  //   axios.post('/api/draft-player', {players: players})
+  //   .then(res => {
+  //     this.setState({fantasyTeam: res.data})
+  //   })
+  //   .catch(error => console.log(error));
 
-  }
+  // }
 
 
 
@@ -36,14 +36,17 @@ class App extends Component {
 
   render(){
 
+    // console.log(this.draftPlayer)
+
     return(
       <div>
-        <Players/>
-
-        <Roster
-        fantasyDisplay={this.state.fantasyTeam}
+        <Players
+        // draftPlayer ={this.draftPlayer}
         />
-        <DisplayRoster/>
+
+        {/* <Roster
+        fantasyDisplay={this.state.fantasyTeam}
+        /> */}
 
 
 
