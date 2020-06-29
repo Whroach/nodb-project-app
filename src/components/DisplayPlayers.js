@@ -44,7 +44,7 @@ export default class DisplayPlayers extends Component {
 
 
     submitEdit = (id) => {
-        this.props.editPlayer(id, this.state.nameInput);
+        this.props.editPlayer(id, this.state.nameInput, this.state.teamInput, this.state.positionInput);
     }
 
 
@@ -82,6 +82,8 @@ export default class DisplayPlayers extends Component {
                 <form id="edit-player">
                 <label>Edit Player Form:</label>
                 <input type="text" value={this.state.nameInput} onChange={element => this.showNameInput(element.target.value)}/>
+                <input type="text" value={this.state.teamInput} onChange={element => this.showTeamInput(element.target.value)}/>
+                <input type="text" value={this.state.positionInput} onChange={element => this.showPositionInput(element.target.value)}/>
                 <button onClick = {() => this.submitEdit(this.props.value.id)}>Update Player</button>
                 </form>
                 {this.state.displayForm ? this.displayForm() : null}

@@ -228,13 +228,13 @@ module.exports = {
     editPlayer: (req,res) => {
 
         const { id } = req.params;
-        const { name, team } = req.body
+        const { name, team, position } = req.body
 
         const editIndex = players.findIndex(element => element.id === +id)
 
         players[editIndex].name = name;
-        newArray[editIndex].team = team;
-        // newArray[editIndex].position = position
+        players[editIndex].team = team;
+        players[editIndex].position = position
 
         res.status(200).send(players)
 

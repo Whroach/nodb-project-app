@@ -30,8 +30,8 @@ class App extends Component {
 
   }
 
-  editPlayer = (id, editName, editTeam) => {
-    let body = {name: editName, team: editTeam}
+  editPlayer = (id, editName, editTeam, editPosition) => {
+    let body = {name: editName, team: editTeam, position: editPosition}
 
 
     axios.put(`/api/player/${id}`, body)
