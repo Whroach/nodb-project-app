@@ -1,31 +1,21 @@
 import React, { Component } from 'react'
 
-export default class DisplayRoster extends Component {
-    constructor(props){
-        super(props)
-
-        this.state = {
-
-        };
-    };
-
-    render() {
+export default function DisplayRoster (props) {
 
 
-
-        
         return (
             <div>
                 <div>
-                    <section>
-                    </section>
-                    <section></section>
-                <p>{this.props.value.name}</p>
-                <p>{this.props.value.team}</p>
-                <p>{this.props.value.position}</p>
+                    <img src={props.value.image} />
+                    <p>{props.value.name}</p>
+                    <p>{props.value.team}</p>
+                    <p>{props.value.position}</p>
+                    <button id = "waive-button" onClick={() => props.removePlayer(props.value.key)}>Waive</button>
                 </div>
             </div>
         )
-    }
-}
+    
+
+};
+
 

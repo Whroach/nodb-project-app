@@ -15,8 +15,6 @@ export default class Players extends Component {
     };
 
 
-
-
     componentDidMount = () => {
         this.getPlayers();
       }
@@ -36,7 +34,7 @@ export default class Players extends Component {
         const  { playerlist } = this.state 
 
         const allPlayers = playerlist.map((element,index) => {
-          return <DisplayPlayers value={element} key={index} draftPlayer={this.props.draftPlayer}/>
+          return <DisplayPlayers value={element} key={index} draftPlayer={this.props.draftPlayer} editPlayer={this.props.editPlayer}/>
         });
 
         return (

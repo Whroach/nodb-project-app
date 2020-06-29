@@ -12,7 +12,7 @@ class App extends Component {
 
 
     this.state = {
-      fantasyTeam: []
+      fantasyTeam: [],
     }
   };
 
@@ -30,7 +30,27 @@ class App extends Component {
 
   }
 
+  editPlayer = (id, editName, editTeam) => {
+    let body = {name: editName, team: editTeam}
 
+
+    axios.put(`/api/player/${id}`, body)
+    .then(res => {
+      this.setState({fantasyTeam: res.data})
+    })
+    .catch(error => console.log(error))
+  }
+
+
+
+  removePlayer = (id) => {
+    axios.delete(`/api/player/${id}`)
+    .then(res => {
+      this.setState({fantasyTeam: res.data})
+    })
+    .catch(error => console.log(error));
+
+  }
 
 
 
@@ -42,10 +62,12 @@ class App extends Component {
         <Header/>
           <Roster
             fantasyDisplay={this.state.fantasyTeam}
+            removePlayer={this.removePlayer}
           />
           <div className="scroll-bar">
             <Players
               draftPlayer ={this.draftPlayer}
+              editPlayer={this.editPlayer}
             />
           </div>
       </div>

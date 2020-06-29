@@ -1,12 +1,13 @@
-.draft-logo {
-  background-image: url("https://www.zagsblog.com/wp-content/uploads/2020/05/image-1.jpeg");
-  background-repeat: no-repeat;
-  height: 80px;
-  width: 100%
+.header {
+background-color: blue;
+height: 15vh;
+margin: auto;
+font-style: italic;
+color: white;
+display: flex;
+justify-content: space-around;
 
 }
-
-
 
 
 .background-image {
@@ -21,7 +22,7 @@
 
 .scroll-bar{
   overflow: scroll;
-  height: 100vh;
+  height: 80vh;
   /* margin: 5%; */
   /* display: none; */
 }
@@ -73,11 +74,49 @@
   display: flex;
   justify-content: center;
   height: 25.9px;
-  width: 100%
+  width: 100%;
+  font-weight: bold;
 
 }
 
-.fantasy-roster{
-  display:flex;
+
+.player-selection{
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  display:grid;
   justify-content: center;
+  grid-template-columns: 200px 200px 200px 200px 200px;
+
+}
+.fantasy-roster{
+  display:grid;
+  justify-content: center;
+  grid-template-columns: 200px 200px 200px 200px 200px;
+  background-color: white;
+  
+
+
+}
+
+#waive-button{
+  background-color: red;
+  width: 100px;
+  color: white;
+  font-size: 15px;
+  font-style: oblique;
+  border: none;
+  font-weight: bold;
+
+
+
+}
+
+#edit-player{
+  display: inline-block;
+  justify-content: center;
+  background-color: gold;
+
+
 }

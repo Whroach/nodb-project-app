@@ -17,8 +17,8 @@ Example: app.get('/api/users', handlerFunc)*/
 
 app.get('/api/players', ctrl.getPlayerData)
 app.post('/api/players', ctrl.draftPlayer);
-// app.put();
-// app.delete();
+app.put('/api/player/:id', ctrl.editPlayer);
+app.delete('/api/player/:id', ctrl.removePlayer);
 
 
 

@@ -1,6 +1,7 @@
 const axios = require('axios');
 const { response } = require('express');
 
+
 let players = [
     {
         id: 1,
@@ -199,9 +200,12 @@ let players = [
     },  
 
 ];
+
+
+
 let newArray = []
 
-let id = 1;
+let id = 26;
 
 
 module.exports = {
@@ -218,7 +222,39 @@ module.exports = {
         id++;
         newArray.push(playersArr)
         res.status(200).send(newArray)
+        console.log(newArray)
     },
+
+    editPlayer: (req,res) => {
+
+        const { id } = req.params;
+        const { name, team } = req.body
+
+        const editIndex = players.findIndex(element => element.id === +id)
+
+        players[editIndex].name = name;
+        newArray[editIndex].team = team;
+        // newArray[editIndex].position = position
+
+        res.status(200).send(players)
+
+
+    },
+
+
+    removePlayer: (req,res) => {
+
+        const { id } = req.params
+        
+        const removeIndex = newArray.findIndex(element => element.id === +id);
+        newArray.splice(removeIndex,1)
+        res.status(200).send(newArray)
+        console.log(newArray)
+
+
+
+    }
+
 
 };
 
